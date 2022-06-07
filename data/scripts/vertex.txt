@@ -1,0 +1,27 @@
+# version 330
+
+layout (location = 0) in vec3 aPos; 
+layout (location = 1) in vec2 aTextureCoord; 
+layout (location = 2) in vec3 aColor;
+
+out vec3 vertexColor;
+out vec2 TexCoord;
+
+uniform float vtime;
+uniform mat4 vertexRotation;
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+
+void main() {
+    gl_Position = projection * view * model * vec4(aPos, 1.0);
+    vertexColor = aColor;
+    TexCoord = aTextureCoord;
+
+    vec2 wave;
+    vec2 scaling = TexCoord * vec2(3, 3); 
+    wave.x = cos(vtime + scaling.x + scaling.y) * 0.1;
+    wave.y = sin(vtime + scaling.x + scaling.y) * 0.1;
+    scaling += wave;
+    TexCoord += scaling;
+}

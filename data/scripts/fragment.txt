@@ -1,0 +1,21 @@
+# version 330
+
+out vec4 FragColor;
+
+in vec2 TexCoord;
+in vec3 vertexColor;
+
+uniform vec4 vertexColorRGB;
+uniform sampler2D sWaterTex;
+
+float random2D(vec2 coord) {
+    return fract(sin(dot(coord.xy, vec2(12.9898, 78.2331)) * 43758.5453));
+}
+
+void main() {
+    vec4 texImage = texture(sWaterTex, TexCoord);
+
+    vec3 vColor = vec3(0.5 * sin(TexCoord.x) + 0.5, 0.5 * sin(TexCoord.y) + 0.5, sin(TexCoord.x + TexCoord.y) * 0.5);
+
+    FragColor = texImage * vec4(1, 1, 1, 1.0);
+}
