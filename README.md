@@ -1,2 +1,2 @@
 "Opengl Shader with Pygame" 
-"# OpengGL-shader-with-Pygame" 
+Use Pygame alongside OpenGL 
