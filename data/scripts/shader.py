@@ -39,8 +39,8 @@ class Shader:
     def set_mat4(self, uName, uVal):
         glUniformMatrix4fv(glGetUniformLocation(self.shader, uName), 1, GL_FALSE, glm.value_ptr(uVal))
 
-    def clear_screen(self, R, G, B, A):
-        glClearColor(R, G, B, A)
+    def clear_screen(self, RGBA):
+        glClearColor(RGBA[0], RGBA[1], RGBA[2], RGBA[3])
 
     def delete(self):
         try:

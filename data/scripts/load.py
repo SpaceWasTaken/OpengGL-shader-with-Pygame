@@ -5,9 +5,7 @@ pygame.init()
 WIDTH, LENGTH = 500, 500
 pygame.display.set_mode((WIDTH, LENGTH))
 
-tree_img = load_image('data/entities/tree.png')
-
-
+# loading images
 
 
 

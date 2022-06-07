@@ -1,1 +1,1 @@
-"# OpenGL-Water-shader" 
+"Opengl Shader with Pygame" 

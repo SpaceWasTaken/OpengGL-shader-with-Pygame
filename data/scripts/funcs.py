@@ -98,4 +98,7 @@ def use_texture(tex_id, gltextures): # [pixel_texture, wave_texture]
             glActiveTexture(i[1])
             glBindTexture(GL_TEXTURE_2D, i[0])
 
+def set_color(R, G, B, A):
+    return R/255, G/255, B/255, A/255
+
 
