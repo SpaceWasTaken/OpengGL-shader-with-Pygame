@@ -69,8 +69,9 @@ def main():
     shader.delete()
     delete_buffers(opengl.VAO, opengl.VBO, opengl.EBO)
     pygame.quit()
-    
-main()
+
+if __name__ == "__main__":
+    main()
 
 
 
